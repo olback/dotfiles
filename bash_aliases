@@ -3,7 +3,7 @@
 
 # github.com/olback
 
-#eval $(thefuck --alias fuck) # Uncomment if you have 'thefuck' installed.
+#eval $(thefuck --alias fuck) # Uncomment if you have thefuck installed.
 
 alias update='apt update && apt upgrade -y && apt autoremove -y'
 alias c='clear'
