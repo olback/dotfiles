@@ -1,4 +1,4 @@
-# bash_aliases
+# bash_aliases install script / bash_aliases file
 Bash aliases for ubuntu/debian/whatever runs ~/.bash_aliases at startup.
 If you'd like to add your own aliases, make a pull request.
 
