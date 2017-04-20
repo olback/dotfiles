@@ -1,9 +1,8 @@
-###################
-# github.com/olback
-###################
+# Created by github.com/olback
+
 
 # github.com/nvbn/thefuck 
-eval $(thefuck --alias fuck) # Comment out if you don't have thefuck installed.
+eval $(thefuck --alias fuck) # Comment out if you don't have thefuck installed. You really shoud have 'thefuck' installed.
 
 # Web
 alias www='cd /var/www && ll'
