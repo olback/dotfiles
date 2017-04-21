@@ -18,3 +18,4 @@ NC='\033[0m'
 # Print Done!
 printf "${COLOR}Done!${NC} \n\n"
 printf 'Run ". ~/.bash_aliases" or open a new terminal to use your aliases.\n\n'
+
