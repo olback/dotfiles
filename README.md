@@ -11,3 +11,6 @@ It's simple, just read the ```bash_aliases``` file :p
 
 #### Why not just copy/pasta the ```bash_aliases``` content?
 What's the fun in that?
+
+#### First time setup
+```wget https://raw.githubusercontent.com/olback/bash_aliases/master/install --https-only && bash install && rm install```
