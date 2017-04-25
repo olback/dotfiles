@@ -16,6 +16,7 @@ alias pag='ps aux | grep'
 alias update='apt update && apt upgrade -y && apt autoremove -y'
 alias ins='sudo apt install -y'
 alias llg='ll | grep'
+alias kys='kill -9'
 
 # Networking
 alias local_ip='ifconfig | grep "inet addr:"'
