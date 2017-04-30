@@ -19,7 +19,7 @@ alias llg='ll | grep'
 alias kys='kill -9'
 
 # Networking
-alias local_ip='ifconfig | grep "inet:"'
+alias local_ip='ifconfig | grep "inet"'
 alias public_ip='printf "Your public ip: ";curl https://whois.olback.net/raw.php?myip;printf "\n"'
 
 # Nano > VIM
