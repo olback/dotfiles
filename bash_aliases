@@ -28,4 +28,4 @@ alias vi='nano'
 alias vim='nano'
 
 # Update ~/.bash_aliases to the newest version.
-alias uba='wget https://raw.githubusercontent.com/olback/bash_aliases/master/install --https-only && bash install && rm install'
+alias uba='curl -sSL https://raw.githubusercontent.com/olback/bash_aliases/master/install | sh'
