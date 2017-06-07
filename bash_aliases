@@ -7,6 +7,7 @@ eval $(thefuck --alias fuck) # Comment out if you don't have thefuck installed. 
 # Web
 alias www='cd /var/www && ll'
 alias www-data='chown www-data:www-data /var/www/ -R'
+alias makeweb='https://raw.githubusercontent.com/olback/bash_aliases/master/makeweb.sh | sh'
 
 # Some random aliases...
 alias py3='python3'
