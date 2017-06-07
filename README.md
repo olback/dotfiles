@@ -13,4 +13,4 @@ It's simple, just read the ```bash_aliases``` file :p
 What's the fun in that?
 
 #### First time setup
-```wget https://raw.githubusercontent.com/olback/bash_aliases/master/install --https-only && bash install && rm install```
+```curl -sSL https://raw.githubusercontent.com/olback/bash_aliases/master/install | sh```
