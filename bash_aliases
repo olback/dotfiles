@@ -18,6 +18,7 @@ alias update='apt update && apt upgrade -y && apt autoremove -y'
 alias ins='sudo apt install -y'
 alias llg='ll | grep'
 alias kys='kill -9'
+alias phps='php -S localhost:5000'
 
 # Networking
 alias local_ip='ifconfig | grep inet | head -1'
