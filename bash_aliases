@@ -1,6 +1,5 @@
 # Created by github.com/olback
 
-
 # github.com/nvbn/thefuck 
 eval $(thefuck --alias fuck) # Comment out if you don't have thefuck installed.
 
