@@ -32,4 +32,4 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Update ~/.bash_aliases to the newest version.
-alias uba='curl -sSL https://raw.githubusercontent.com/olback/bash_aliases/master/install | sh'
+alias uba='curl -sSL https://raw.githubusercontent.com/olback/dotfiles/master/install | sh'
