@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Project available at github.com/olback/bash_aliases
+# Project available at github.com/olback/dotfiles
 
 # Create date variable
 d="$(date +%F)"
@@ -8,8 +8,8 @@ d="$(date +%F)"
 # Rename the old .bash_aliases to .bash_aliases.<current date>.
 mv ~/.bash_aliases ~/.bash_aliases.$d
 
-# Download new version from https://raw.githubusercontent.com/olback/bash_aliases/master/bash_aliases
-wget https://raw.githubusercontent.com/olback/bash_aliases/master/bash_aliases --https-only -O ~/.bash_aliases
+# Download new version from https://raw.githubusercontent.com/olback/dotfiles/master/bash_aliases
+wget https://raw.githubusercontent.com/olback/dotfiles/master/bash_aliases --https-only -O ~/.bash_aliases
 
 # Colors, why not?
 COLOR='\033[1;32m'
