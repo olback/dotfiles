@@ -13,14 +13,24 @@ alias ls='ls --color=auto'
 #PS1='\e[92m\u\e[39m@\e[33m\h\e[0m\e[39m:\W\$ '
 
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-PS1='\e[1;92m\u\e[39m@\e[33m\h\e[0m\e[39m:\W\e[1;33m$(parse_git_branch)\e[0m\e[39m\$ '
+git_branch() {
+  if [ "$(parse_git_branch)" != "" ]; then
+    if [ "$(parse_git_branch)" == "(master)" ]; then
+      echo -e " \e[1;38;5;196m$(parse_git_branch)"
+    else
+      echo -e " \e[1;33m$(parse_git_branch)"
+    fi
+  fi
+}
+
+PS1='\e[1;92m\u\e[39m@\e[33m\h\e[0m\e[39m:\W$(git_branch)\e[0m\e[39m\$ '
 
 if [ "$USER" == "root" ]
 then
-  PS1='\e[1m\e[31m\u\e[0m\e[39m@\e[33m\h\e[0m\e[39m:\W\$ '
+  PS1='\e[1;31m\u\e[0m\e[1;39m@\e[33m\h\e[0m\e[39m:\W\$ '
 fi
 
 # >>> BEGIN ADDED BY CNCHI INSTALLER
