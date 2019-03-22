@@ -32,5 +32,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+mkcd () {mkdir $1 && cd $1 }
+
 # Update ~/.bash_aliases to the newest version.
 alias uba='curl -sSL https://raw.githubusercontent.com/olback/dotfiles/master/install | sh'
