@@ -1,0 +1,6 @@
+export BROWSER=/usr/bin/chromium
+export EDITOR=/usr/bin/nano
+export GPG_TTY=$(tty)
+export PATH=/home/olback/flutter/bin:$PATH
+export PATH=/home/olback/.cargo/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
