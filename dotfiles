@@ -1,3 +1,3 @@
-source ~/.dotfiles/aliases
-source ~/.dotfiles/exports
-source ~/.dotfiles/powerlevel
+source /home/olback/.dotfiles/aliases
+source /home/olback/.dotfiles/exports
+source /home/olback/.dotfiles/powerlevel

@@ -13,7 +13,7 @@ alias llg='ll | grep'
 alias kys='kill -9'
 alias phps='php -S localhost:5000'
 alias kas="kill -9 $(ps aux | grep ssh | grep localhost | awk '{print $2}')"
-
+alias code='vscodium'
 # Networking
 alias local_ip='ifconfig | grep inet | head -1'
 alias public_ip='printf "Your public ip: ";curl https://whois.olback.net/raw.php?myip;printf "\n"'
