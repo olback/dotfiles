@@ -15,6 +15,7 @@ alias phps='php -S localhost:5000'
 alias kas="kill -9 $(ps aux | grep ssh | grep localhost | awk '{print $2}')"
 alias code='vscodium'
 alias c.='vscodium .'
+
 # Networking
 alias local_ip='ifconfig | grep inet | head -1'
 alias public_ip='printf "Your public ip: ";curl https://whois.olback.net/raw.php?myip;printf "\n"'
@@ -24,9 +25,10 @@ alias public_ip='printf "Your public ip: ";curl https://whois.olback.net/raw.php
 # alias vim='nano'
 
 # ls aliases
-alias ll='ls -alhF'
-alias la='ls -A'
-alias l='ls -CF'
+#alias ll='ls -alhF'
+#alias la='ls -A'
+#alias l='ls -CF'
+alias ll='exa -la'
 
 # Make dir and cd to it
 mkcd () { mkdir $1 && cd $1 }
@@ -35,5 +37,6 @@ mkcd () { mkdir $1 && cd $1 }
 dotu () {
     local CWD=$(pwd)
     cd ~/.dotfiles && git pull
+    echo 'source ~/.dotfiles/dotfiles OR open a new shell'
     cd $CWD
 }
