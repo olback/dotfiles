@@ -1,3 +1,5 @@
+#!/bin/bash
+
 FILES=$(ls ~/.dotfiles/shell)
 
 rm -f ~/.dotfiles/dotfiles
