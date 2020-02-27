@@ -15,6 +15,7 @@ alias phps='php -S localhost:5000'
 alias kas="kill -9 $(ps aux | grep ssh | grep localhost | awk '{print $2}')"
 alias code='vscodium'
 alias c.='vscodium .'
+alias weather='curl https://v2.wttr.in'
 
 # Networking
 alias local_ip='ifconfig | grep inet | head -1'
