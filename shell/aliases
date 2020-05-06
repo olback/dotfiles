@@ -7,8 +7,6 @@ alias py3='python3'
 alias s='sudo -i'
 alias c='clear'
 alias pag='ps aux | grep'
-alias update='apt update && apt upgrade -y && apt autoremove -y'
-alias ins='sudo apt install -y'
 alias llg='ll | grep'
 alias kys='kill -9'
 alias phps='php -S localhost:5000'
@@ -16,10 +14,17 @@ alias kas="kill -9 $(ps aux | grep ssh | grep localhost | awk '{print $2}')"
 alias code='vscodium'
 alias c.='vscodium .'
 alias weather='curl https://v2.wttr.in'
+alias cdd='cd ~/Desktop'
 
 # Networking
-alias local_ip='ifconfig | grep inet | head -1'
-alias public_ip='printf "Your public ip: ";curl https://whois.olback.net/raw.php?myip;printf "\n"'
+local-ip () {
+    ip a | grep inet | grep "enp\\|wlp" | awk '{print $2}' | rev | cut -c 4- | rev
+}
+
+public-ip () {
+    curl "https://whois.olback.net/raw.php?myip"
+    printf "\n"
+}
 
 # Nano > VIM
 # alias vi='nano'
