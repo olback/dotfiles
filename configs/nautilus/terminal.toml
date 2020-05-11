@@ -1,0 +1,3 @@
+name = 'Alacritty'
+terminal = '/usr/bin/bash'
+args = ['/home/olback/.dotfiles/bin/nautilus-tmux-open-in-terminal.sh', '{DIR}']
