@@ -335,8 +335,8 @@ colors:
 #   - (Windows) powershell
 shell:
    program: /bin/tmux
-   args:
-     - attach
+#   args:
+#     - attach
 
 # Startup directory
 #
