@@ -40,7 +40,7 @@ alias ll='exa -la'
 mkcd () { mkdir $1 && cd $1 }
 
 # Create a new Cargo project with a unique email
-nrp () { CARGO_CARGO_NEW_EMAIL="$1@olback.net" cargo new $1 && cd $1 }
+nrp () { CARGO_CARGO_NEW_EMAIL="$1@olback.net" cargo new $1 $2 && cd $1 }
 
 # Update dotfiles
 dotu () {
