@@ -8,3 +8,4 @@ export PATH=/home/olback/flutter/bin:$PATH
 export PATH=/home/olback/.cargo/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.local/bin:$PATH
+export PATH=~/.dotfiles/bin:$PATH
