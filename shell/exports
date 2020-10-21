@@ -1,5 +1,5 @@
 export BROWSER=/usr/bin/chromium
-export EDITOR=/usr/bin/nano
+export EDITOR=/usr/bin/nvim
 export GPG_TTY=$(tty)
 export NPM_CONFIG_PREFIX=~/.npm-global
 export CARGO_TARGET_DIR=~/.cargo-target

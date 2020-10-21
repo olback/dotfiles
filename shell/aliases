@@ -30,6 +30,11 @@ public-ip () {
 # alias vi='nano'
 # alias vim='nano'
 
+# nvim aliases
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+
 # ls aliases
 #alias ll='ls -alhF'
 #alias la='ls -A'
