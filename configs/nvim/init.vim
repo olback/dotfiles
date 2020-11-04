@@ -87,6 +87,15 @@ let $CARGO_TARGET_DIR="/home/olback/.cargo-target"
 colorscheme gruvbox
 syntax on
 
+" Clipboard stuff
+if has('clipboard')
+    if has('unnamedplus')  " When possible use + register for copy-paste
+        set clipboard=unnamed,unnamedplus
+    else         " On mac and Windows, use * register for copy-paste
+        set clipboard=unnamed
+    endif
+endif
+
 " GUI settings
 set guioptions-=T " Remove toolbar
 set vb t_vb= " No more beeps
