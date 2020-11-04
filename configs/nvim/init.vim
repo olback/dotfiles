@@ -39,6 +39,8 @@ Plug 'rhysd/vim-clang-format'
 "Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'rhysd/vim-clang-format'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -60,6 +62,16 @@ endfunction
 " Use auocmd to force lightline update.
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
+" Rust
+let g:LanguageClient_serverCommands = {
+\ 'rust': ['rust-analyzer'],
+\ }
+
+" C
+let g:clang_format#auto_format = 1
+let g:ale_linters = {'c': ['gcc']}
+let g:airline#extensions#ale#enabled = 1
+
 " racer + rust
 " https://github.com/rust-lang/rust.vim/issues/192
 let g:rustfmt_autosave = 1
@@ -68,7 +80,7 @@ let g:rustfmt_fail_silently = 0
 let g:rust_clip_command = 'xclip -selection clipboard'
 "let g:racer_cmd = "/usr/bin/racer"
 "let g:racer_experimental_completer = 1
-let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
+"let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 
 colorscheme gruvbox
 syntax on
