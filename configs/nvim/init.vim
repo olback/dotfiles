@@ -63,9 +63,9 @@ endfunction
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 " Rust
-let g:LanguageClient_serverCommands = {
-\ 'rust': ['rust-analyzer'],
-\ }
+"let g:LanguageClient_serverCommands = {
+"\ 'rust': ['rust-analyzer'],
+"\ }
 
 " C
 let g:clang_format#auto_format = 1
@@ -81,6 +81,8 @@ let g:rust_clip_command = 'xclip -selection clipboard'
 "let g:racer_cmd = "/usr/bin/racer"
 "let g:racer_experimental_completer = 1
 "let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
+"let $CARGO_TARGET_DIR = systemlist("env")
+let $CARGO_TARGET_DIR="/home/olback/.cargo-target"
 
 colorscheme gruvbox
 syntax on
