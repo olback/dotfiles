@@ -62,6 +62,9 @@ endfunction
 " Use auocmd to force lightline update.
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
+" coc
+let g:coc_config_home="$HOME/.dotfiles/configs/nvim"
+
 " Rust
 "let g:LanguageClient_serverCommands = {
 "\ 'rust': ['rust-analyzer'],
@@ -82,19 +85,23 @@ let g:rust_clip_command = 'xclip -selection clipboard'
 "let g:racer_experimental_completer = 1
 "let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 "let $CARGO_TARGET_DIR = systemlist("env")
-let $CARGO_TARGET_DIR="/home/olback/.cargo-target"
+let $CARGO_TARGET_DIR=$HOME . "/.cargo-target"
 
+" Color stuff
 colorscheme gruvbox
 syntax on
 
 " Clipboard stuff
-if has('clipboard')
-    if has('unnamedplus')  " When possible use + register for copy-paste
-        set clipboard=unnamed,unnamedplus
-    else         " On mac and Windows, use * register for copy-paste
-        set clipboard=unnamed
-    endif
-endif
+set clipboard=unnamedplus
+
+" Auto close brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
 " GUI settings
 set guioptions-=T " Remove toolbar
