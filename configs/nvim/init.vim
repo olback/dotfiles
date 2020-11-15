@@ -41,6 +41,8 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'rhysd/vim-clang-format'
 Plug 'dense-analysis/ale'
+Plug 'mattn/emmet-vim'
+Plug 'vim-scripts/dbext.vim'
 
 call plug#end()
 
