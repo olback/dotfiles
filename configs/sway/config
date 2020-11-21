@@ -215,7 +215,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #
 # Exit bar
 #
-set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (S) shutdown, (R) UEFI
+set $mode_system System: (l) Lock, (e) Logout, (s) Suspend, (r) Reboot, (S) Shutdown, (R) UEFI
 mode "$mode_system" {
     bindsym l exec $lock, mode "default"
     bindsym e exit
