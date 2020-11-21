@@ -191,6 +191,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
+# Touchpad
+#
+input type:touchpad {
+    tap enabled
+    natural_scroll disabled
+}
+
+#
 # Keyboard layout
 #
 input * {
