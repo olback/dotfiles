@@ -21,7 +21,7 @@ set $lock ~/.dotfiles/bin/lock.sh
 #
 # Autostart stuff
 #
-exec --no-startup-id gammastep -c ~/.config/gammastep/config.ini
+exec --no-startup-id ~/.dotfiles/bin/gammastep.sh
 
 #
 # Wallpaper
