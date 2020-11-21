@@ -90,8 +90,10 @@ let g:rust_clip_command = 'xclip -selection clipboard'
 let $CARGO_TARGET_DIR=$HOME . "/.cargo-target"
 
 " Color stuff
-colorscheme gruvbox
 syntax on
+let g:gruvbox_contrast_dark = 'hard'
+set background=dark
+colorscheme gruvbox
 
 " Clipboard stuff
 set clipboard=unnamedplus
@@ -126,3 +128,4 @@ set diffopt+=indent-heuristic
 set showcmd " Show (partial) command in status line.
 set mouse=a " Enable mouse usage (all modes) in terminals
 set shortmess+=c " don't give |ins-completion-menu| messages.
+
