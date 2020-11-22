@@ -7,7 +7,7 @@
     "modules-center": ["sway/window"],
     "modules-right": ["tray", "custom/spotify", "custom/weather", "custom/mail", "custom/storage", "backlight", "pulseaudio", "network", "idle_inhibitor", "battery", "clock"],
     "sway/mode": {
-        "format": " {}"
+        "format": "   {}"
     },
     "sway/workspaces": {
         "format": "{name}",
@@ -22,7 +22,7 @@
         "tooltip": false
     },
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}%  {icon}",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""],
         "format-charging": "{capacity}% ",
@@ -47,7 +47,7 @@
     },
     "pulseaudio": {
         "format": "{icon}",
-        "format-alt": "{volume} {icon}",
+        "format-alt": "{volume}% {icon}",
         "format-alt-click": "click-right",
         "format-muted": "",
         "format-icons": {
