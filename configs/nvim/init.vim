@@ -35,11 +35,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 Plug 'rust-lang/rust.vim'
-Plug 'rhysd/vim-clang-format'
 "Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'rhysd/vim-clang-format'
+"Plug 'rhysd/vim-clang-format'
 Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/dbext.vim'
@@ -114,6 +113,7 @@ set vb t_vb= " No more beeps
 set backspace=2 " Backspace over newlines
 set nofoldenable
 set ttyfast
+set cmdheight=2
 " https://github.com/vim/vim/issues/1735#issuecomment-383353563
 set lazyredraw
 set synmaxcol=500
