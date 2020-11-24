@@ -22,7 +22,7 @@ set $lock ~/.dotfiles/bin/lock.sh
 # Autostart stuff
 #
 exec --no-startup-id ~/.dotfiles/bin/gammastep.sh
-# exec mkfifo $SWAYSOCK.audio.wob && tail -f $SWAYSOCK.audio.wob | wob $(~/.dotfiles/bin/wob-config.sh ~/.dotfiles/configs/wob/audio)
+exec --no-startup-id ~/.dotfiles/bin/wob-start.sh
 
 #
 # Wallpaper
@@ -213,12 +213,12 @@ input * {
 #
 # Media key bindings
 #
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86AudioRaiseVolume exec ~/.dotfiles/bin/volume.sh up
+bindsym XF86AudioLowerVolume exec ~/.dotfiles/bin/volume.sh down
+bindsym XF86AudioMute exec ~/.dotfiles/bin/volume.sh toggle-mute
+bindsym XF86AudioMicMute exec ~/.dotfiles/bin/volume.sh toggle-mute-source
+bindsym XF86MonBrightnessDown exec ~/.dotfiles/bin/brightness.sh down
+bindsym XF86MonBrightnessUp exec ~/.dotfiles/bin/brightness.sh up
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
