@@ -5,7 +5,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "custom/spotify", "custom/weather", "custom/mail", "custom/storage", "backlight", "pulseaudio", "network", "idle_inhibitor", "battery", "clock"],
+    "modules-right": ["custom/spotify", "tray", "custom/weather", "custom/mail", "custom/storage", "backlight", "pulseaudio", "network", "idle_inhibitor", "battery", "clock"],
     "sway/mode": {
         "format": "   {}"
     },
@@ -43,7 +43,7 @@
             "disconnected": [""]
         },
         "on-click": "alacritty -e nmtui",
-    "tooltip": false
+        "tooltip": false
     },
     "pulseaudio": {
         "format": "{icon}",
@@ -56,6 +56,8 @@
         },
         "scroll-step": 2,
         "on-click": "pavucontrol",
+        "on-scroll-up": "~/.dotfiles/bin/volume.sh up",
+        "on-scroll-down": "~/.dotfiles/bin/volume.sh down", 
         "tooltip": false
     },
     "custom/spotify": {
@@ -78,8 +80,8 @@
         "format-alt": "{percent}% {icon}",
         "format-alt-click": "click-right",
         "format-icons": ["", ""],
-        "on-scroll-down": "light -A 1",
-        "on-scroll-up": "light -U 1"
+        "on-scroll-down": "~/.dotfiles/bin/brightness.sh down",
+        "on-scroll-up": "~/.dotfiles/bin/brightness.sh up"
     },
     "custom/weather": {
         "format": "{}",
