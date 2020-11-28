@@ -1,56 +1,73 @@
-window {
-    margin: 5px;
-    border: 0px solid #444444;
-    background-color: rgba(0, 0, 0, 0.0);
-    font-family: SF Pro Text Regular;
+/* Colors */
+@define-color bg_color rgba(0, 0, 0, 0.7);
+
+@define-color input_color #fff;
+@define-color input_bg_color rgba(50, 50, 50, 0.5);
+
+@define-color input_color_focus #fff;
+@define-color input_bg_color_focus rgba(50, 50, 50, 0.5);
+
+@define-color entry_color #bbb;
+@define-color entry_bg_color transparent;
+
+@define-color entry_color_selected #fff;
+@define-color entry_bg_color_selected rgba(50, 50, 50, 0.5);
+
+#window {
+    background-color: @bg_color;
+    border-radius: 3rem;
 }
 
-@keyframes erscheinen {
-    from {opacity: 0;}
-      to {opacity: 1;}
+scrolledwindow undershoot.top,
+scrolledwindow undershoot.bottom {
+    background-image: none;
+}
+
+#outer-box {
+    margin-bottom: 2rem;
 }
 
 #input {
-    margin: 0px 0px 5px;
-    border: 1px solid #c9c9c9;
-    background-color: rgba(30, 30, 30, 0.810);
-    border-radius: 5px;
-    color : #fdf6e3;
-    /* animation: erscheinen 0.3s linear; */
+    margin: 2rem;
+    background-color: @input_bg_color;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    color: @input_color;
 }
 
-#inner-box {
-    margin: 0px;
-    border: 0px solid #444444;
-    background-color: rgba(68, 68, 68, 0.0);
+#input:focus {
+    background-color: @input_bg_color_focus;
+    color: @input_color_focus;
 }
 
-/* #inner-box flowboxchild:nth-child(even) { */
-/*     background-color: #555555; */
-/* } */
-
-#outer-box {
-    margin: 0px;
-    border: 0px solid rgb(203, 75, 22);
-    background-color: rgba(0, 0, 0, 0.0);
+#input, #input:focus {
+    border: none;
 }
 
-#scroll {
-    margin: 0px;
-    border: 1px solid #c9c9c9;
-    border-radius: 5px;
-    background-color: rgba(30, 30, 30, 0.810);
-    /* animation: erscheinen 0.3s linear; */
+#entry {
+    background-color: @entry_bg_color;
 }
 
-#text {
-    margin: 1px;
-    border: 0px solid #44AA44;
-    /* background-color: #444444; */
-    color: #FFFFFF;
+#entry label {
+    color: @entry_color;
 }
 
-#selected {
-    background-color: rgb(40, 85, 119);
+#entry:selected {
+    background-color: @entry_bg_color_selected;
+    outline: none;
+}
+
+#entry:selected label {
+    color: @entry_color_selected;
+}
+
+flowboxchild {
+    padding: 1rem;
+    margin: 0 2rem;
+}
+
+flowboxchild label {
+    padding-left: 1rem;
+    font-size: 1.5rem;
 }
 

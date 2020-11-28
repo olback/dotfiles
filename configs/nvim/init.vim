@@ -80,6 +80,9 @@ let g:clang_format#auto_format = 1
 let g:ale_linters = {'c': ['gcc']}
 let g:airline#extensions#ale#enabled = 1
 
+" CSS/SCSS
+autocmd FileType scss setl iskeyword+=@-@
+
 " racer + rust
 " https://github.com/rust-lang/rust.vim/issues/192
 let g:rustfmt_autosave = 1
