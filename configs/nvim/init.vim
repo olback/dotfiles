@@ -17,6 +17,7 @@ Plug 'morhetz/gruvbox'
 Plug 'ciaranm/securemodelines'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-sneak'
+Plug 'shougo/echodoc.vim', { 'do': 'make' }
 
 " GUI enhancements
 Plug 'itchyny/lightline.vim'
@@ -59,6 +60,9 @@ let g:lightline = {
 function! LightlineFilename()
   return expand('%:t') !=# '' ? @% : '[No Name]'
 endfunction
+
+" Statusbar function signatures
+let g:echodoc#enable_at_startup = 1
 
 " Use auocmd to force lightline update.
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
