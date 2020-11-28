@@ -31,6 +31,7 @@ exec --no-startup-id ~/.dotfiles/bin/gammastep.sh
 exec --no-startup-id ~/.dotfiles/bin/wob-start.sh
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec ssh-agent
+exec ~/.cargo-target/release/buzz-waybar --server
 
 
 #

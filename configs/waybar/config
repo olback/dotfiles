@@ -101,14 +101,15 @@
         "tooltip": false
     },
     "custom/mail": {
-        "format": "",
-        "format-alt": "{alt} ",
+        "format": "{icon}",
+        "format-alt": "{alt} {icon}",
         "format-alt-click": "click-right",
-        "interval": 60,
+        "format-icons": ["", ""],
         "return-type": "json",
-        "exec": "~/.config/waybar/modules/mail.py",
-        "tooltip": false
-    },
+        "interval": 5,
+        "exec": "~/.cargo-target/release/buzz-waybar",
+        "tooltip": true
+    }, 
     "custom/test": {
         "format": "{}",
         "exec": "/tmp/test blub",
