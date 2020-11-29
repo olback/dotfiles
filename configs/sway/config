@@ -15,7 +15,8 @@ set $lock ~/.dotfiles/bin/lock.sh
 #
 # Screenshot
 #
-# TODO
+bindsym Print exec ~/.dotfiles/bin/screenshot.sh tempfiles.ninja # Upload file to tempfiles.ninja and put link in clipboard
+bindsym Shift+Print exec ~/.dotfiles/bin/screenshot.sh # Bind this to a menu instead
 
 
 #

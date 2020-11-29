@@ -16,4 +16,6 @@ insensitive=true
 allow_images=true
 image_size=50
 columns=2
+prompt=Search apps
+lines=5
 
