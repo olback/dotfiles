@@ -31,7 +31,7 @@ exec --no-startup-id ~/.dotfiles/bin/gammastep.sh
 exec --no-startup-id ~/.dotfiles/bin/wob-start.sh
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec eval $(ssh-agent)
-exec ~/.cargo-target/release/buzz-waybar --server
+#exec ~/.cargo-target/release/buzz-waybar --server
 exec ssh-agent -D -a $XDG_RUNTIME_DIR/ssh-agent.sock
 exec SSH_ASKPASS=~/.dotfiles/bin/pipe.sh ssh-add <<< $(gnome-keyring-query get ssh_key_pw) 
 
