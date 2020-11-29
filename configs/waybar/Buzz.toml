@@ -1,5 +1,5 @@
 [defaults]
-notification-cmd = "notify-send -i email 'New mail!' '{name}'"
+notification-cmd = "notify-send -i email 'New mail' '{name}'"
 folder = "INBOX"
 trim-password = true
 

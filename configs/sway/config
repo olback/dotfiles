@@ -7,7 +7,6 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
 set $term alacritty
 set $menu wofi --show drun
 set $lock ~/.dotfiles/bin/lock.sh
@@ -31,8 +30,10 @@ bindsym $mod+l exec ~/.dotfiles/bin/lock.sh
 exec --no-startup-id ~/.dotfiles/bin/gammastep.sh
 exec --no-startup-id ~/.dotfiles/bin/wob-start.sh
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec ssh-agent
+#exec eval $(ssh-agent)
 exec ~/.cargo-target/release/buzz-waybar --server
+exec ssh-agent -D -a $XDG_RUNTIME_DIR/ssh-agent.sock
+exec SSH_ASKPASS=~/.dotfiles/bin/pipe.sh ssh-add <<< $(gnome-keyring-query get ssh_key_pw) 
 
 
 #

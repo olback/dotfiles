@@ -3,6 +3,7 @@ export EDITOR=/usr/bin/nvim
 export GPG_TTY=$(tty)
 export NPM_CONFIG_PREFIX=~/.npm-global
 export CARGO_TARGET_DIR=~/.cargo-target
+export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.sock
 
 # Path stuff
 export PATH=/home/olback/flutter/bin:$PATH
