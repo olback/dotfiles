@@ -106,8 +106,9 @@
         "format-alt-click": "click-right",
         "format-icons": ["", ""],
         "return-type": "json",
-        "interval": 5,
+        "interval": 10,
         "exec": "~/.cargo-target/release/buzz-waybar",
+        "on-click": "thunderbird",
         "tooltip": true
     }, 
     "custom/test": {
