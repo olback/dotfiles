@@ -70,6 +70,9 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 " coc
 let g:coc_config_home="$HOME/.dotfiles/configs/nvim"
 
+" Associate filename extensions with syntax highlighter
+autocmd BufNewFile,BufRead *.tera set filetype=html
+
 " Rust
 "let g:LanguageClient_serverCommands = {
 "\ 'rust': ['rust-analyzer'],
