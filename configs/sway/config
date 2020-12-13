@@ -12,6 +12,11 @@ set $menu wofi --show drun
 set $lock ~/.dotfiles/bin/lock.sh
 
 #
+# Sent font
+#
+font pango:Noto Sans 11
+
+#
 # Screenshot
 #
 bindsym Print exec ~/.dotfiles/bin/screenshot.sh tempfiles.ninja # Upload file to tempfiles.ninja and put link in clipboard
