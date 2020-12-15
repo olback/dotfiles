@@ -117,7 +117,8 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 " GUI settings
-:set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"set list listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set list listchars=tab:→\ ,trail:· "show tabs and spaces
 set guioptions-=T " Remove toolbar
 set vb t_vb= " No more beeps
 set backspace=2 " Backspace over newlines

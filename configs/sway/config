@@ -84,6 +84,8 @@ for_window [class=Pidgin] floating enable
 for_window [app_id=pavucontrol] floating enable
 for_window [title="Save File"] floating enable
 for_window [app_id=blueman-manager] floating enable
+for_window [title="Cisco AnyConnect Secure Mobility Client"] floating enable
+for_window [app_id=rdg] floating enable
 
 
 #
