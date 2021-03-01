@@ -91,12 +91,17 @@ autocmd FileType scss setl iskeyword+=@-@
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
-let g:rust_clip_command = 'xclip -selection clipboard'
+"let g:rust_clip_command = 'xclip -selection clipboard'
 "let g:racer_cmd = "/usr/bin/racer"
 "let g:racer_experimental_completer = 1
 "let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 "let $CARGO_TARGET_DIR = systemlist("env")
 let $CARGO_TARGET_DIR=$HOME . "/.cargo-target"
+
+" Cargo.toml stuff
+if has('nvim')
+  autocmd BufRead Cargo.toml call crates#toggle()
+endif
 
 " Color stuff
 syntax on
@@ -117,8 +122,8 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 " GUI settings
-"set list listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set list listchars=tab:→\ ,trail:· "show tabs and spaces
+set list listchars=tab:→\ ,trail:·,extends:>,precedes:<
+"set list listchars=tab:→\ ,trail:· "show tabs and spaces
 set guioptions-=T " Remove toolbar
 set vb t_vb= " No more beeps
 set backspace=2 " Backspace over newlines
