@@ -43,6 +43,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/dbext.vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
