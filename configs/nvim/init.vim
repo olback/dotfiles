@@ -110,6 +110,9 @@ let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 colorscheme gruvbox
 
+" Ctrl+Del to delete word
+imap <C-Del> X<Esc>dwi
+
 " Clipboard stuff
 set clipboard=unnamedplus
 
