@@ -25,7 +25,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'andymass/vim-matchup'
 
 " Fuzzy finder
-Plug 'airblade/vim-rooter'
+"Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
