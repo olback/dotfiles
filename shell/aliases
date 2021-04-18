@@ -15,6 +15,8 @@ alias code='vscodium'
 alias c.='vscodium .'
 alias weather='curl https://v2.wttr.in'
 alias cdd='cd ~/Desktop'
+alias ng='$(pwd)/node_modules/.bin/ng'
+alias cdp='cd ~/Projects && ll'
 
 # Networking
 local-ip () {
@@ -47,6 +49,8 @@ mkcd () { mkdir $1 && cd $1 }
 
 # Create a new Cargo project with a unique email
 nrp () { CARGO_CARGO_NEW_EMAIL="$1@olback.net" cargo new $1 $2 && cd $1 }
+
+nggcs() { for component in $@; do ng g c $component; done }
 
 # Update dotfiles
 dotu () {
