@@ -1,0 +1,3 @@
+# Example command, any menu accepting the dmenu format from stdin works.
+command = "wofi --dmenu --columns 1 -D hide_search=true --style /home/olback/.config/swaytab/style.css"
+

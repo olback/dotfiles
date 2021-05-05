@@ -1,0 +1,73 @@
+/* Colors */
+@define-color bg_color rgba(0, 0, 0, 0.7);
+
+@define-color input_color #fff;
+@define-color input_bg_color rgba(50, 50, 50, 0.5);
+
+@define-color input_color_focus #fff;
+@define-color input_bg_color_focus rgba(50, 50, 50, 0.5);
+
+@define-color entry_color #bbb;
+@define-color entry_bg_color transparent;
+
+@define-color entry_color_selected #fff;
+@define-color entry_bg_color_selected rgba(50, 50, 50, 0.5);
+
+#window {
+    background-color: @bg_color;
+    border-radius: 3rem;
+}
+
+scrolledwindow undershoot.top,
+scrolledwindow undershoot.bottom {
+    background-image: none;
+}
+
+#outer-box {
+    margin-bottom: 2rem;
+}
+
+#input {
+    margin: 0rem;
+    background-color: @input_bg_color;
+    font-size: 1.5rem;
+    padding: 0rem;
+    color: @input_color;
+}
+
+#input:focus {
+    background-color: @input_bg_color_focus;
+    color: @input_color_focus;
+}
+
+#input, #input:focus {
+    border: none;
+}
+
+#entry {
+    background-color: @entry_bg_color;
+}
+
+#entry label {
+    color: @entry_color;
+}
+
+#entry:selected {
+    background-color: @entry_bg_color_selected;
+    outline: none;
+}
+
+#entry:selected label {
+    color: @entry_color_selected;
+}
+
+flowboxchild {
+    padding: 1rem;
+    margin: 0 2rem;
+}
+
+flowboxchild label {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
