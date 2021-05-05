@@ -27,6 +27,7 @@ bindsym Shift+Print exec ~/.dotfiles/bin/screenshot.sh # Bind this to a menu ins
 # Other bindings
 #
 bindsym $mod+l exec ~/.dotfiles/bin/lock.sh
+bindsym $mod+tab exec ~/.cargo/bin/swaytab
 
 
 #
