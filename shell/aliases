@@ -17,6 +17,7 @@ alias weather='curl https://v2.wttr.in'
 alias cdd='cd ~/Desktop'
 alias ng='$(pwd)/node_modules/.bin/ng'
 alias cdp='cd ~/Projects && ll'
+alias week='date +%W'
 
 # Networking
 local-ip () {
