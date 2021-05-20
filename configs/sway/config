@@ -69,7 +69,9 @@ client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 # Configure monitors and workspace layouts
 #
 output DP-3 pos 0 200
+output DP-4 pos 0 200
 output DP-5 pos 1920 0
+output DP-7 pos 1920 0
 output eDP-1 pos 4480 200
 workspace 1 output eDP-1
 workspace 2 output DP-5
