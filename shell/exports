@@ -1,4 +1,4 @@
-export BROWSER=/usr/bin/google-chrome-unstable
+export BROWSER=/usr/bin/firefox-nightly
 export EDITOR=/usr/bin/nvim
 export GPG_TTY=$(tty)
 export NPM_CONFIG_PREFIX=~/.npm-global
