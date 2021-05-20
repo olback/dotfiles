@@ -18,6 +18,7 @@ alias cdd='cd ~/Desktop'
 alias ng='$(pwd)/node_modules/.bin/ng'
 alias cdp='cd ~/Projects && ll'
 alias week='date +%W'
+alias ':e'='nvim'
 
 # Networking
 local-ip () {
@@ -44,6 +45,15 @@ alias vim='nvim'
 #alias la='ls -A'
 #alias l='ls -CF'
 alias ll='exa -la'
+
+# Upload a file to tempfiles.ninja
+upload() {
+    URL="https://tempfiles.ninja/api/upload?filename=$1"
+    MIME=$(file --mime-type -b $1)
+    DOWNLOAD_URL=$(curl --data-binary @$1 -X POST -H "Content-Type: $MIME" $URL | jq -r '.download_url')
+    echo $DOWNLOAD_URL
+    echo $DOWNLOAD_URL | wl-copy
+}
 
 # Make dir and cd to it
 mkcd () { mkdir $1 && cd $1 }
