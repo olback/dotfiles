@@ -90,7 +90,7 @@ for_window [app_id=blueman-manager] floating enable
 for_window [title="Cisco AnyConnect Secure Mobility Client"] floating enable
 for_window [app_id=rdg] floating enable
 for_window [class=1Password] floating enable
-fow_window [class=jetbrains-toolbox] floating enable
+for_window [class=jetbrains-toolbox] floating enable
 
 
 #
