@@ -45,6 +45,9 @@ Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/dbext.vim'
 Plug 'mattn/emmet-vim'
 
+" Markdown
+Plug 'oknozor/illumination', { 'dir': '~/.illumination', 'do': '.install.sh' }
+
 call plug#end()
 
 " Lightline
