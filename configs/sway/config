@@ -28,6 +28,7 @@ bindsym Shift+Print exec ~/.dotfiles/bin/screenshot.sh # Bind this to a menu ins
 #
 bindsym $mod+l exec ~/.dotfiles/bin/lock.sh
 bindsym $mod+tab exec ~/.cargo/bin/swaytab
+bindsym $mod+M exec ~/.cargo/bin/math-expr-eval
 
 
 #
@@ -91,6 +92,7 @@ for_window [title="Cisco AnyConnect Secure Mobility Client"] floating enable
 for_window [app_id=rdg] floating enable
 for_window [class=1Password] floating enable
 for_window [class=jetbrains-toolbox] floating enable
+for_window [app_id=math-expr-eval] floating enable
 
 
 #
