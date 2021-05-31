@@ -1,3 +1,2 @@
-#SUBSYSTEMS=="input", ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="0250", ACTION="add", RUN+="/bin/echo 0 | tee /sys/module/hid_apple/parameters/fnmode"
-SUBSYSTEMS=="input", ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="0250", RUN+="/bin/bash /home/olback/.dotfiles/bin/t.sh"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="0250", ACTION=="add", RUN+="/bin/bash /home/olback/.dotfiles/bin/fix-keychron.sh"
 
