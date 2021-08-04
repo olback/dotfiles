@@ -1,0 +1,19 @@
+sensors:
+  - tpacpi: /proc/acpi/ibm/thermal
+    # Some of the temperature entries in /proc/acpi/ibm/thermal may be
+    # irrelevant or unused, so individual ones can be selected:
+    indices: [0]
+
+fans:
+  # tpacpi: Thinkpad-specific fan interface
+  # =======================================
+  # Currently, this is the only way to use disengaged and automatic mode on
+  # thinkpads.
+  - tpacpi: /proc/acpi/ibm/fan
+
+levels:
+  - [0, 0, 55]
+  - ["level auto", 50, 75]
+  - ["level disengaged", 70, 255]
+
+
