@@ -12,8 +12,9 @@ fans:
   - tpacpi: /proc/acpi/ibm/fan
 
 levels:
-  - [0, 0, 55]
-  - ["level auto", 50, 75]
-  - ["level disengaged", 70, 255]
-
+  - ["level 0", 0, 60]
+  - ["level 1", 55, 70]
+  - ["level 2", 65, 80]
+  - ["level auto", 75, 90]
+  - ["level disengaged", 85, 255]
 
