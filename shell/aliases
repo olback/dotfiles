@@ -20,6 +20,11 @@ alias cdp='cd ~/Projects && ll'
 alias week='date +%W'
 alias ':e'='nvim'
 
+# List large files/dirs
+large_files () {
+    du -a $1 2>/dev/null | sort -n -r | head -n 20
+}
+
 # Networking
 local-ip () {
     ip a | grep inet | grep "enp\\|wlp" | awk '{print $2}' | rev | cut -c 4- | rev
