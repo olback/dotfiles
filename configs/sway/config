@@ -271,6 +271,16 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 #
+# ssc key bindings
+#
+bindsym CTRL+XF86AudioRaiseVolume exec ~/.cargo/bin/ssc volume-up
+bindsym CTRL+XF86AudioLowerVolume exec ~/.cargo/bin/ssc volume-down
+bindsym CTRL+XF86AudioPlay exec ~/.cargo/bin/ssc play-pause
+bindsym CTRL+XF86AudioNext exec ~/.cargo/bin/ssc next-track
+bindsym CTRL+XF86AudioPrev exec ~/.cargo/bin/ssc previous-track
+
+
+#
 # Exit bar
 #
 set $mode_system System: Lock (l), Logout (e), Suspend (s), Reboot (r), Shutdown (S), UEFI (U)
