@@ -8,5 +8,5 @@ tail -f $SWAYSOCK.audio.wob | wob $(~/.dotfiles/bin/wob-config.sh ~/.dotfiles/co
 
 rm $SWAYSOCK.brightness.wob
 mkfifo $SWAYSOCK.brightness.wob
-tail -f $SWAYSOCK.brightness.wob | wob $(~/.dotfiles/bin/wob-config.sh ~/.dotfiles/configs/wob/config) --bar-color=#ffff8800 &
+tail -f $SWAYSOCK.brightness.wob | wob $(~/.dotfiles/bin/wob-config.sh ~/.dotfiles/configs/wob/config) --bar-color=#ff8800ff &
 
