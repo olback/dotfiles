@@ -19,9 +19,10 @@ alias ng='$(pwd)/node_modules/.bin/ng'
 alias cdp='cd ~/Projects && ll'
 alias week='date +%W'
 alias ':e'='nvim'
+alias open='xdg-open'
 
 # List large files/dirs
-large_files () {
+large-files () {
     du -a $1 2>/dev/null | sort -n -r | head -n 20
 }
 
@@ -31,7 +32,7 @@ local-ip () {
 }
 
 public-ip () {
-    curl "https://whois.olback.net/raw.php?myip"
+    curl "https://whois.olback.net/raw.php?myip
     printf "\n"
 }
 
