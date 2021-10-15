@@ -6,13 +6,13 @@
 # If not already configured, load required kernel module like this:
 # modprobe v4l2loopback exclusive_caps=1 card_label=WfRecorder 
 
-MODNAME=v4l2loopbackk
+MODNAME=v4l2loopback
 
 modinfo $MODNAME > /dev/null
 
 if [[ $? != 0 ]]; then
     echo "Loading kernel module $MODNAME"
-    sudo modprobe $MODNAME
+    sudo modprobe $MODNAME exclusive_caps=1 card_label=WfRecorder
 
 fi
 
