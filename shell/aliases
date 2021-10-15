@@ -31,10 +31,10 @@ local-ip () {
     ip a | grep inet | grep "enp\\|wlp" | awk '{print $2}' | rev | cut -c 4- | rev
 }
 
-public-ip () {
-    curl "https://whois.olback.net/raw.php?myip
-    printf "\n"
-}
+#public-ip () {
+#    curl "https://whois.olback.net/raw.php?myip"
+#    printf "\n"
+#}
 
 # Nano > VIM
 # alias vi='nano'
