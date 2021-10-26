@@ -96,6 +96,7 @@ for_window [app_id=rdg] floating enable
 for_window [class=1Password] floating enable
 for_window [class=jetbrains-toolbox] floating enable
 for_window [app_id=math-expr-eval] floating enable
+for_window [app_id=gnome-calculator] floating enable
 
 
 #
