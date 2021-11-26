@@ -335,7 +335,7 @@ colors:
 #   - (Linux) user login shell
 #   - (Windows) powershell
 shell:
-   program: /bin/tmux
+   program: ".dotfiles/bin/alacritty-entry.sh"
 #   args:
 #     - attach
 
