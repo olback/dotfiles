@@ -48,7 +48,8 @@ exec_always echo $(gnome-keyring-query get ssh_key_pw) | SSH_AUTH_SOCK=$XDG_RUNT
 #output * bg ~/Pictures/Wallpapers/wallhaven-oxkjgm.jpg fill
 #output * bg #000000 solid_color
 #exec_always swaybg -i $(ls ~/Pictures/Wallpapers | sort -R | head -1) -m fill
-exec_always swaymsg 'output "*" background "~/Pictures/Wallpapers/$(ls ~/Pictures/Wallpapers | sort -R | head -1)" fill'
+#exec_always swaymsg 'output "*" background "~/Pictures/Wallpapers/$(ls ~/Pictures/Wallpapers | sort -R | head -1)" fill'
+exec_always "~/.dotfiles/bin/set-wallpaper.sh"
 
 
 #
