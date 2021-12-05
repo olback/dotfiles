@@ -107,7 +107,7 @@
         "format-icons": ["", ""],
         "return-type": "json",
         "interval": 10,
-        "exec": "~/.cargo-target/release/buzz-waybar",
+        "exec": "~/.cargo/bin/buzz-waybar",
         "on-click": "thunderbird",
         "tooltip": true
     }, 
