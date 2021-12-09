@@ -7,6 +7,7 @@
 # modprobe v4l2loopback exclusive_caps=1 card_label=WfRecorder 
 
 MODNAME=v4l2loopback
+VIDEO_DEVICE=/dev/video4
 
 modinfo $MODNAME > /dev/null
 
@@ -16,5 +17,5 @@ if [[ $? != 0 ]]; then
 
 fi
 
-wf-recorder --muxer=v4l2 --codec=rawvideo --file=/dev/video2 -x yuv420p
+wf-recorder --muxer=v4l2 --codec=rawvideo --file=$VIDEO_DEVICE -x yuv420p
 

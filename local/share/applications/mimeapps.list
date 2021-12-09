@@ -1,0 +1,4 @@
+[Default Applications]
+inode/directory=thunar.desktop;
+text/plain=org.gnome.gedit.desktop;
+
