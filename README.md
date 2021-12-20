@@ -20,3 +20,4 @@ Install ZSH plugins:
 * [ ] link etc
 * [x] link local
 * [ ] link udev
+* [ ] gitconfig

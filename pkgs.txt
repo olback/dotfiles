@@ -9,6 +9,7 @@ exa
 curl
 wget
 binwalk
+bat
 
 sway
 swaylock
