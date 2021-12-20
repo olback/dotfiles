@@ -83,6 +83,8 @@ workspace 2 output DP-6
 output DP-6 pos 0 0
 output eDP-1 pos 1920 0
 
+exec_always "~/.dotfiles/bin/sway-layout.sh"
+
 #
 # Floating windows
 #
