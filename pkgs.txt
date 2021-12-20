@@ -1,9 +1,14 @@
 git
+git-delta
 neovim
 zip
 unzip
 zsh
 tmux
+exa
+curl
+wget
+binwalk
 
 sway
 swaylock
