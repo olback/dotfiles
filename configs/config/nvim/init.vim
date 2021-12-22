@@ -119,7 +119,7 @@ autocmd User AirlineAfterInit call AirlineInit()
 
 " Other
 filetype plugin indent on
-"set noshowmode " Don't show vim-mode i.e. --INSERT--,..
+set noshowmode " Don't show vim-mode i.e. --INSERT--,..
 " Uses spaces instead of tabs
 set shiftwidth=4
 set tabstop=4

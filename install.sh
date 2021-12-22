@@ -26,6 +26,7 @@ done
 declare -a annoying_configs=(
     "$HOME/.tmux.conf $HOME/.dotfiles/configs/tmux.conf"
     "$HOME/.gtkrc-2.0 $HOME/.dotfiles/configs/gtkrc-2.0"
+    "$HOME/.gitconfig $HOME/.dotfiles/configs/gitconfig"
 )
 
 for elem in "${annoying_configs[@]}"; do
