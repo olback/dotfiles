@@ -1,3 +1,5 @@
+" https://github.com/mhinz/vim-crates
+
 if exists('g:loaded_crates')
   finish
 endif
@@ -70,17 +72,13 @@ function! s:virttext_add_version(lnum, vers_current, vers_latest)
   endif
 endfunction
 
-function! s:crates_io_cmd(crate, async) abort
+function! s:crates_io_cmd(crate) abort
   let url = printf('%s/crates/%s/versions', s:api, a:crate)
-  let useragent = 'vim-crates (https://github.com/mhinz/vim-crates)'
-  if !a:async
-    let useragent = shellescape(useragent)
-  endif
-  return ['curl', '-sLA', useragent, url]
+  return ['curl', '-sL', url]
 endfunction
 
 function! s:make_request_sync(crate)
-  let result = system(join(s:crates_io_cmd(a:crate, 0)))
+  let result = system(join(s:crates_io_cmd(a:crate)))
   if v:shell_error
     return v:shell_error
   endif
@@ -155,7 +153,7 @@ function! g:CratesComplete(findstart, base)
     endwhile
     return start
   else
-    let crate = matchstr(getline('.'), '^[a-z\-_0-9]\+')
+    let crate = matchstr(getline('.'), '^[a-z\-_]\+')
     if !exists('b:crates')
       let b:crates = {}
     endif
@@ -201,7 +199,7 @@ function! s:crates() abort
         if has_key(b:crates, crate)
           call s:virttext_add_version(lnum, vers, s:cache(crate))
         else
-          call s:make_request_async(s:crates_io_cmd(crate, 1), crate, vers, lnum,
+          call s:make_request_async(s:crates_io_cmd(crate), crate, vers, lnum,
                 \ function('s:callback_show_latest_version'))
         endif
       endif
@@ -269,3 +267,4 @@ augroup crates
 augroup END
 
 let g:loaded_crates = 1
+

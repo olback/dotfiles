@@ -1,117 +1,71 @@
-" This is mostly stolen from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
-
-set noshowmode
-
-" Uses spaces instead of tabs
-set shiftwidth=4
-set tabstop=4
-set expandtab
+"
+" Plugins
+"
 
 " Run :PlugInstall
 call plug#begin()
 
-" Color
-Plug 'morhetz/gruvbox'
+" Helpers
+Plug 'nvim-lua/plenary.nvim'            " Helper functions
 
-" VIM enhancements
-Plug 'ciaranm/securemodelines'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'justinmk/vim-sneak'
-Plug 'shougo/echodoc.vim', { 'do': 'make' }
+" Theme / Colors / Icons
+Plug 'morhetz/gruvbox'                  " Main theme
+Plug 'folke/lsp-colors.nvim'            " LSP Colors
+Plug 'kyazdani42/nvim-web-devicons'     " Icons
+Plug 'vim-airline/vim-airline'          " Status bar
+Plug 'vim-airline/vim-airline-themes'
 
-" GUI enhancements
-Plug 'itchyny/lightline.vim'
-Plug 'machakann/vim-highlightedyank'
-Plug 'andymass/vim-matchup'
+" Editor
+Plug 'editorconfig/editorconfig-vim'    " Respect editorconfig
+Plug 'ypcrts/securemodelines'           " Secure VIM modelines
+Plug 'machakann/vim-highlightedyank'    " Highlight yanks
+Plug 'airblade/vim-gitgutter'           " Show git diff in gutter
 
-" Fuzzy finder
-"Plug 'airblade/vim-rooter'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Components
+Plug 'folke/trouble.nvim'               " Trouble, list errors, warnings, info
+Plug 'folke/todo-comments.nvim'         " Highligt TODO/FIXME
 
-" Semantic language support
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Language
+Plug 'rust-lang/rust.vim'               " Rust
+Plug 'mattn/emmet-vim'                  " Emmet (HTML)
 
-" Syntactic language support
-Plug 'cespare/vim-toml'
-Plug 'stephpy/vim-yaml'
-Plug 'rust-lang/rust.vim'
-"Plug 'fatih/vim-go'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'rhysd/vim-clang-format'
-Plug 'dense-analysis/ale'
-Plug 'mattn/emmet-vim'
-Plug 'vim-scripts/dbext.vim'
-Plug 'mattn/emmet-vim'
-
-" Markdown
-Plug 'oknozor/illumination', { 'dir': '~/.illumination', 'do': '.install.sh' }
+" LSP
+Plug 'neovim/nvim-lspconfig'            " LSP
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'simrat39/rust-tools.nvim'
 
 call plug#end()
 
-" Lightline
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'filename': 'LightlineFilename',
-      \   'cocstatus': 'coc#status'
-      \ },
-      \ }
-function! LightlineFilename()
-  return expand('%:t') !=# '' ? @% : '[No Name]'
-endfunction
-
-" Statusbar function signatures
-let g:echodoc#enable_at_startup = 1
-
-" Use auocmd to force lightline update.
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
-
-" coc
-let g:coc_config_home="$HOME/.dotfiles/configs/nvim"
-
-" Associate filename extensions with syntax highlighter
-autocmd BufNewFile,BufRead *.tera set filetype=html
-
 " Rust
-"let g:LanguageClient_serverCommands = {
-"\ 'rust': ['rust-analyzer'],
-"\ }
-
-" C
-let g:clang_format#auto_format = 1
-let g:ale_linters = {'c': ['gcc']}
-let g:airline#extensions#ale#enabled = 1
-
-" CSS/SCSS
-autocmd FileType scss setl iskeyword+=@-@
-
-" racer + rust
-" https://github.com/rust-lang/rust.vim/issues/192
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
-"let g:rust_clip_command = 'xclip -selection clipboard'
-"let g:racer_cmd = "/usr/bin/racer"
-"let g:racer_experimental_completer = 1
-"let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
-"let $CARGO_TARGET_DIR = systemlist("env")
-let $CARGO_TARGET_DIR=$HOME . "/.cargo-target"
 
-" Cargo.toml stuff
+"
+" Triggers
+"
+
+" Rust + Cargo stuff
+" Cargo.toml version checks
 if has('nvim')
-  autocmd BufRead Cargo.toml call crates#toggle()
+    autocmd BufRead Cargo.toml call crates#toggle()
 endif
+" format on write
+autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
+" gilight 100:th column, rustfmt max_width
+autocmd Filetype rust setlocal colorcolumn=100
+" Show diagnostic popup on cursor hold
+autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 
-" Color stuff
-syntax on
-let g:gruvbox_contrast_dark = 'hard'
-set background=dark
-colorscheme gruvbox
+
+"
+" Keyboard/Autoclose
+"
 
 " Ctrl+Del to delete word
 imap <C-Del> X<Esc>dwi
@@ -128,9 +82,49 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-" GUI settings
+" Code navigation shortcuts
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gt    <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
+
+" Trouble
+nnoremap <silent>tw <cmd>Trouble workspace_diagnostics<cr>
+nnoremap <silent>td <cmd>Trouble document_diagnostics<cr>
+nnoremap <silent>tn <cmd>TodoTrouble<cr>
+nnoremap <silent>tq <cmd>TroubleClose<cr>
+
+
+"
+" GUI settings / Other
+"
+
+" Color stuff
+syntax on
+let g:gruvbox_contrast_dark = 'hard'
+set background=dark
+colorscheme gruvbox
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'base16_gruvbox_dark_soft'
+
+function! AirlineInit()
+  let g:airline_section_a = airline#section#create(['mode'])
+  let g:airline_section_b = airline#section#create(['hunks','branch'])
+  let g:airline_section_c = airline#section#create_left(['file'])
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
+
+" Other
+filetype plugin indent on
+"set noshowmode " Don't show vim-mode i.e. --INSERT--,..
+" Uses spaces instead of tabs
+set shiftwidth=4
+set tabstop=4
+set expandtab
 set list listchars=tab:→\ ,trail:·,extends:>,precedes:<
-"set list listchars=tab:→\ ,trail:· "show tabs and spaces
 set guioptions-=T " Remove toolbar
 set vb t_vb= " No more beeps
 set backspace=2 " Backspace over newlines
@@ -151,4 +145,21 @@ set diffopt+=indent-heuristic
 set showcmd " Show (partial) command in status line.
 set mouse=a " Enable mouse usage (all modes) in terminals
 set shortmess+=c " don't give |ins-completion-menu| messages.
+set signcolumn=yes
+set termguicolors
+set completeopt=menuone,noinsert,noselect " Set completeopt to have a better completion experience
+" Set updatetime for CursorHold
+" 300ms of no cursor movement to trigger CursorHold
+set updatetime=300
+set encoding=utf-8
+set autoindent
+
+
+"
+" Lua
+"
+
+lua << EOF
+require('init_lua')
+EOF
 

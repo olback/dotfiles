@@ -10,7 +10,7 @@ fi
 #
 # Config links
 #
-for f in $(ls ~/.dotfiles/configs/config); do
+for f in $(ls ~/.dotfiles/configs/config | grep -v "\.old$"); do
     P="$HOME/.config/$f"
     C="$HOME/.dotfiles/configs/config/$f"
     if [[ -e "$P" || -h "$P" ]]; then
