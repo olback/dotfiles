@@ -75,5 +75,5 @@ window#waybar.solo {
 }
 
 #tray {
-    margin: 0 6px;
+    margin: 0 6px 0 12px;
 }
