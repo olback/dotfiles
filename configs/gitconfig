@@ -1,11 +1,12 @@
+[include]
+    path = ~/.gitgpg
 [user]
     email = git@olback.net
-    signingkey = 7F9EC4DD0C67951F
     name = Edwin Svensson
 [commit]
     gpgSign = true
 [gpg]
-    program = gpg2
+    program = gpg
 [init]
     defaultBranch = master
 [pull]
@@ -16,3 +17,4 @@
     diffFilter = delta --color-only
 [delta]
     line-numbers = true
+
