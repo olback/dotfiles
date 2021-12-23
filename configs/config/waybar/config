@@ -8,6 +8,8 @@
     "modules-right": [
         "custom/spotify",
         "tray",
+        "custom/eq",
+        "custom/updates",
         "custom/weather",
         "custom/mail",
         "custom/storage",
@@ -129,8 +131,19 @@
         "format-alt": "{alt} ",
         "format-alt-click": "click-right",
         "return-type": "json",
-        "exec": "~/.dotfiles/configs/waybar/modules/n-updates-available.sh",
         "interval": 60,
+        "exec": "~/.config/waybar/modules/n-updates-available.sh",
+        "tooltip": true
+    },
+    "custom/eq": {
+        "format": "",
+        "format-alt": "{alt} ",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 10,
+        "exec": "~/.config/waybar/modules/eq.sh",
+        "exec-on-event": true,
+        "on-click": "~/.dotfiles/bin/toggle-eq.js",
         "tooltip": true
     },
     "custom/test": {
