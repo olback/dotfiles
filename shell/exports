@@ -1,13 +1,13 @@
 export BROWSER=/usr/bin/firefox-nightly
 export EDITOR=/usr/bin/nvim
 export GPG_TTY=$(tty)
-export NPM_CONFIG_PREFIX=~/.npm-global
-export CARGO_TARGET_DIR=~/.cargo-target
+export NPM_CONFIG_PREFIX=$HOME/.npm-global
+export CARGO_TARGET_DIR=$HOME/.cargo-target
 export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.sock
 
 # Path stuff
-export PATH=/home/olback/flutter/bin:$PATH
-export PATH=/home/olback/.cargo/bin:$PATH
-export PATH=~/.npm-global/bin:$PATH
-export PATH=~/.local/bin:$PATH
-export PATH=~/.dotfiles/bin:$PATH
+export PATH=$HOME/flutter/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.npm-global/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.dotfiles/bin:$PATH

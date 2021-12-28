@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rm -r ~/.local/share/nvim/swap/*
+rm -r $HOME/.local/share/nvim/swap/*
 

@@ -14,9 +14,9 @@ alias kas="kill -9 $(ps aux | grep ssh | grep localhost | awk '{print $2}')"
 alias code='vscodium'
 alias c.='vscodium .'
 alias weather='curl https://v2.wttr.in'
-alias cdd='cd ~/Desktop'
+alias cdd='cd $HOME/Desktop'
 alias ng='$(pwd)/node_modules/.bin/ng'
-alias cdp='cd ~/Projects && ll'
+alias cdp='cd $HOME/Projects && ll'
 alias week='date +%W'
 alias ':e'='nvim'
 alias open='xdg-open'
@@ -73,7 +73,7 @@ nggcs() { for component in $@; do ng g c $component; done }
 # Update dotfiles
 dotu () {
     local CWD=$(pwd)
-    cd ~/.dotfiles && git pull
-    echo 'source ~/.dotfiles/dotfiles OR open a new shell'
+    cd $HOME/.dotfiles && git pull
+    echo 'source $HOME/.dotfiles/dotfiles OR open a new shell'
     cd $CWD
 }

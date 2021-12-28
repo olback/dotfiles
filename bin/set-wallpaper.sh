@@ -2,7 +2,7 @@
 
 WALLPAPER_TYPE="fill"
 WALLPAPER_IGNORE="\.disabled$"
-WALLPAPERS_PATH=~/.dotfiles/wallpapers
+WALLPAPERS_PATH=$HOME/.dotfiles/wallpapers
 
 WALLPAPER_NAME=$(ls $WALLPAPERS_PATH | grep -v $WALLPAPER_IGNORE | sort -R | head -1)
 WALLPAPER_PATH="$WALLPAPERS_PATH/$WALLPAPER_NAME"

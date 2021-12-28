@@ -4,7 +4,7 @@ set -e
 
 sleep 0.1
 
-readarray -t EQRC < ~/.config/pulse/equalizerrc
+readarray -t EQRC < $HOME/.config/pulse/equalizerrc
 
 EQ_PROFILE=${EQRC[4]}
 EQ_ENABLED=${EQRC[5]}

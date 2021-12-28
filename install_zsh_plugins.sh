@@ -6,5 +6,5 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $1/plugins/zsh-au
 # Syntax highlightning
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $1/plugins/zsh-syntax-highlighting
 
-echo "Don't forget to append zsh-autosuggestions & zsh-syntax-highlighting to plugins() in ~/.zshrc like this:"
+echo "Don't forget to append zsh-autosuggestions & zsh-syntax-highlighting to plugins() in $HOME/.zshrc like this:"
 echo "plugins=(git zsh-autosuggestions zsh-syntax-highlighting)"

@@ -2,7 +2,7 @@
 
 Install:
 ```terminal
-git clone git@github.com/olback/dotfiles ~/.dotfiles
+git clone git@github.com/olback/dotfiles $HOME/.dotfiles
 .dotfiles/install.sh
 ```
 

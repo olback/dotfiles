@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cachedir=~/.cache/rbn
+cachedir=$HOME/.cache/rbn
 cachefile=${0##*/}-$1
 
 if [ ! -d $cachedir ]; then

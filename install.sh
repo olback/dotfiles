@@ -10,7 +10,7 @@ fi
 #
 # Config links
 #
-for f in $(ls ~/.dotfiles/configs/config | grep -v "\.old$"); do
+for f in $(ls $HOME/.dotfiles/configs/config | grep -v "\.old$"); do
     P="$HOME/.config/$f"
     C="$HOME/.dotfiles/configs/config/$f"
     if [[ -e "$P" || -h "$P" ]]; then
@@ -56,10 +56,10 @@ done
 #
 # Shell
 #
-rm -f ~/.dotfiles/dotfiles
+rm -f $HOME/.dotfiles/dotfiles
 
 for f in $(ls shell); do
-    echo "source $HOME/.dotfiles/shell/$f" >> ~/.dotfiles/dotfiles
+    echo "source $HOME/.dotfiles/shell/$f" >> $HOME/.dotfiles/dotfiles
 done
 
 echo "Add 'source $HOME/.dotfiles/dotfiles' to .zshrc or .bashrc"
