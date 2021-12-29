@@ -1,3 +1,7 @@
-https://fasterthanli.me/index.xml
 https://www.phoronix.com/rss.php
 http://www.jeffgeerling.com/blog.xml
+https://interrupt.memfault.com/feed.xml
+https://fasterthanli.me/index.xml
+https://blog.rust-embedded.org/rss.xml
+https://blog.rust-lang.org/feed.xml
+https://blog.rust-lang.org/inside-rust/feed.xml
