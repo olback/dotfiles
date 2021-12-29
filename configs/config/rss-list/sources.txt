@@ -1,0 +1,3 @@
+https://fasterthanli.me/index.xml
+https://www.phoronix.com/rss.php
+http://www.jeffgeerling.com/blog.xml
