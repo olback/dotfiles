@@ -4,7 +4,7 @@
 
 const fs = require('fs');
 
-const codiumProductJsonPath = '/usr/share/vscodium-bin/resources/app/product.json';
+const codiumProductJsonPath = '/opt/vscodium-bin/resources/app/product.json';
 const newExtensionsGallery = {
     key: 'extensionsGallery',
     data: {
