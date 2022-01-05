@@ -68,7 +68,7 @@ autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 "
 
 " Ctrl+Del to delete word
-imap <C-Del> X<Esc>dwi
+imap <C-Del> <Esc><Right>dwi
 
 " Clipboard stuff
 set clipboard=unnamedplus
