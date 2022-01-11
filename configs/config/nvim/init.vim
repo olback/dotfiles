@@ -101,6 +101,10 @@ nnoremap <silent>tq <cmd>TroubleClose<cr> " Close
 " Tree
 nnoremap <C-n> :NvimTreeToggle<CR>
 
+" Bufferline
+nnoremap <C-PageDown> :BufferLineCycleNext<CR>
+nnoremap <C-PageUp> :BufferLineCyclePrev<CR>
+
 
 "
 " GUI settings / Other
