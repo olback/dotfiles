@@ -24,6 +24,8 @@ Plug 'airblade/vim-gitgutter'           " Show git diff in gutter
 " Components
 Plug 'folke/trouble.nvim'               " Trouble, list errors, warnings, info
 Plug 'folke/todo-comments.nvim'         " Highligt TODO/FIXME
+Plug 'kyazdani42/nvim-tree.lua'         " Tree
+Plug 'akinsho/bufferline.nvim'          " Bufferline / Tabs
 
 " Language
 Plug 'rust-lang/rust.vim'               " Rust
@@ -60,7 +62,7 @@ autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
 " gilight 100:th column, rustfmt max_width
 autocmd Filetype rust setlocal colorcolumn=100
 " Show diagnostic popup on cursor hold
-autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+"autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 
 
 "
@@ -91,10 +93,13 @@ nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
 
 " Trouble
-nnoremap <silent>tw <cmd>Trouble workspace_diagnostics<cr>
-nnoremap <silent>td <cmd>Trouble document_diagnostics<cr>
-nnoremap <silent>tn <cmd>TodoTrouble<cr>
-nnoremap <silent>tq <cmd>TroubleClose<cr>
+nnoremap <silent>tw <cmd>Trouble workspace_diagnostics<cr> " Workspace
+nnoremap <silent>td <cmd>Trouble document_diagnostics<cr> " Document
+nnoremap <silent>tn <cmd>TodoTrouble<cr> " Notes
+nnoremap <silent>tq <cmd>TroubleClose<cr> " Close
+
+" Tree
+nnoremap <C-n> :NvimTreeToggle<CR>
 
 
 "
@@ -103,12 +108,12 @@ nnoremap <silent>tq <cmd>TroubleClose<cr>
 
 " Color stuff
 syntax on
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'medium'
 set background=dark
 colorscheme gruvbox
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'base16_gruvbox_dark_soft'
+let g:airline_theme = 'base16_gruvbox_dark_medium'
 
 function! AirlineInit()
   let g:airline_section_a = airline#section#create(['mode'])
@@ -154,6 +159,33 @@ set updatetime=300
 set encoding=utf-8
 set autoindent
 
+"
+" Tree
+"
+let g:nvim_tree_highlight_opened_files = 1
+let g:nvim_tree_icons = {
+    \ 'default': '',
+    \ 'symlink': '',
+    \ 'git': {
+    \   'unstaged': "+",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "+",
+    \   'untracked': "*",
+    \   'deleted': "-",
+    \   'ignored': "◌"
+    \   },
+    \ 'folder': {
+    \   'arrow_open': "",
+    \   'arrow_closed': "",
+    \   'default': "",
+    \   'open': "",
+    \   'empty': "",
+    \   'empty_open': "",
+    \   'symlink': "",
+    \   'symlink_open': "",
+    \   }
+    \ }
 
 "
 " Lua
