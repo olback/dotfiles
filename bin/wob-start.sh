@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 2
+
 kill -9 $(pidof wob)
 
 rm $SWAYSOCK.audio.wob
