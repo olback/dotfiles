@@ -1,21 +1,22 @@
 /* Colors */
-@define-color bg_color rgba(0, 0, 0, 0.7);
+@define-color bg_color rgba(32, 32, 32, 0.5);
 
 @define-color input_color #fff;
-@define-color input_bg_color rgba(50, 50, 50, 0.5);
+@define-color input_bg_color rgba(32, 32, 32, 0.5);
 
 @define-color input_color_focus #fff;
-@define-color input_bg_color_focus rgba(50, 50, 50, 0.5);
+@define-color input_bg_color_focus rgba(32, 32, 32, 0.5);
 
 @define-color entry_color #bbb;
 @define-color entry_bg_color transparent;
 
 @define-color entry_color_selected #fff;
-@define-color entry_bg_color_selected rgba(50, 50, 50, 0.5);
+@define-color entry_bg_color_selected rgba(32, 32, 32, 0.5);
 
 #window {
+    /* font-family: 'Noto Sans Mono'; */
     background-color: @bg_color;
-    border-radius: 3rem;
+    border-radius: 0.5rem;
 }
 
 scrolledwindow undershoot.top,
@@ -33,16 +34,23 @@ scrolledwindow undershoot.bottom {
     font-size: 1.5rem;
     padding: 1.5rem;
     color: @input_color;
+    border-radius: 0.5rem;
+    border: 2px solid @input_bg_color;
+}
+
+#input image {
+    padding-right: 1rem;
 }
 
 #input:focus {
     background-color: @input_bg_color_focus;
     color: @input_color_focus;
+    border-color: #009ddc;
 }
 
-#input, #input:focus {
+/*#input, #input:focus {
     border: none;
-}
+}*/
 
 #entry {
     background-color: @entry_bg_color;
@@ -62,6 +70,7 @@ scrolledwindow undershoot.bottom {
 }
 
 flowboxchild {
+    border-radius: 0.5rem;
     padding: 1rem;
     margin: 0 2rem;
 }
