@@ -109,8 +109,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: "MesloLGMDZ Nerd Font Mono"
-    #family: "Noto Sans Mono"
+    #family: "MesloLGMDZ Nerd Font Mono"
+    family: "Noto Sans Mono"
     #family: "Noto Sans Mono Nerd Font"
     #family: "Iosevka Nerd Font"
     #family: "Source Code Pro"
