@@ -8,6 +8,7 @@
     "modules-right": [
         "custom/spotify",
         "tray",
+        "custom/temp",
         "custom/eq",
         "custom/updates",
         "custom/weather",
@@ -146,10 +147,17 @@
         "on-click": "~/.dotfiles/bin/toggle-eq.js",
         "tooltip": true
     },
+    "custom/temp": {
+        "format": "",
+        "exec": "~/.config/waybar/modules/temps.js",
+        "return-type": "json",
+        "tooltip": true,
+        "interval": 5
+    },
     "custom/test": {
-        "format": "{}",
-        "exec": "/tmp/test blub",
-        "param": "blah",
+        "format": " ",
+        "exec": "echo",
+        "tooltip": true,
         "interval": 5
     },
     "tray": {
