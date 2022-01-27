@@ -2,6 +2,12 @@
 
 #set -e
 
+# Only allow once instance of wifi
+pidof wofi
+if [ $? == 0 ]; then
+    exit 1
+fi
+
 WOFI_WIDTH=1100
 WOFI_HEIGHT_FRAC=3
 WOFI_HEIGHT_ERROR=220
