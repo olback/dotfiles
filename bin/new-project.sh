@@ -31,7 +31,12 @@ function generate_c_project {
     printf "$1\n" > .gitignore
 
     # Init git
-    git init
+    set +e
+    git status &> /dev/null
+    if [ $? != 0 ]; then
+        git init
+    fi
+    set -e
 }
 
 if [ $# -lt 2 ]; then

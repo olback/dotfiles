@@ -29,6 +29,7 @@ bindsym Shift+Print exec ~/.dotfiles/bin/screenshot.sh # Bind this to a menu ins
 bindsym $mod+l exec ~/.dotfiles/bin/lock.sh
 bindsym $mod+tab exec ~/.cargo/bin/swaytab
 bindsym $mod+M exec ~/.cargo/bin/math-expr-eval
+bindsym $mod+z exec ~/.cargo/bin/sway-boomer
 
 
 #
