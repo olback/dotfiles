@@ -8,20 +8,22 @@
 
 FILENAME="$(date +"%Y%m%d_%H%M%S").png"
 FILEPATH="$HOME/Pictures/Screenshots/$FILENAME"
-AREA=$(slurp)
+#AREA=$(slurp)
 
-if [[ $? != 0 ]]; then
-    notify-send -i error "Invalid selection"
-    exit 1
-fi
+#if [[ $? != 0 ]]; then
+#    notify-send -i error "Invalid selection"
+#    exit 1
+#fi
 
 #echo $FILENAME
 #echo $FILEPATH
 #echo $AREA
 
-GRIM_MSG=$(grim -t png -g "$AREA" "$FILEPATH")
+#GRIM_MSG=$(grim -t png -g "$AREA" "$FILEPATH")
 
-if [[ $? == 0 ]]; then
+gnome-screenshot -f $FILEPATH -p -a
+
+if [[ -f $FILEPATH ]]; then
 
     if [[ $1 == "tempfiles.ninja" ]]; then
         RESPONSE=$(curl \
@@ -32,7 +34,7 @@ if [[ $? == 0 ]]; then
         if [[ $? == 0 ]]; then
             # echo $RESPONSE
             if [[ $(echo $RESPONSE | jq -r '.status') == 201 ]]; then
-                echo $RESPONSE | jq -r '.download_url' | wl-copy
+                echo $RESPONSE | jq -r '.download_url' | ~/.local/bin/wl-copy
                 notify-send -i $FILEPATH "Screenshot uploaded" "$FILENAME"
             else
                 notify-send -i error "Upload failed" "$(echo $RESPONSE | jq -r '.message')"
