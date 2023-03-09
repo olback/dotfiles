@@ -1,8 +1,5 @@
 [include]
     path = ~/.gitgpg
-[user]
-    email = git@olback.net
-    name = Edwin Svensson
 [commit]
     gpgSign = true
 [gpg]
